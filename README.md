@@ -1,7 +1,7 @@
 # onWindowResize
 Create numerous window resize checks that are loaded into a single listener handler. 
 
-Breakpoints can also be defined to restrict when functions within the listener are called.
+Breakpoints can also be defined to restrict when functions are called.
 
 # Usage:
 If only one breakpoint paramenter is passed (in the example: 500), the resize function will
