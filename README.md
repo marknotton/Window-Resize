@@ -1,4 +1,4 @@
-# Window Resize
+# On Window Resize
 Create numerous window resize checks that are loaded into a single listener handler. 
 
 Breakpoints can also be defined to restrict when functions are called.
