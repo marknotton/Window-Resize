@@ -1,13 +1,25 @@
 {
   "name": "on-window-resize",
-  "version": "0.0.1",
   "ignore": [],
   "homepage": "https://github.com/marknotton/on-window-resize",
-  "authors": [
-    "marknotton.uk"
-  ],
+  "author": {
+    "name": "Mark Notton",
+    "url": "http://www.marknotton.uk"
+  },
   "description": "Create numerous window resize checks that are loaded into a single listener handler.",
-  "license": [
-    "MIT"
-  ]
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marknotton/on-window-resize"
+  },
+  "version": "0.0.1",
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1",
+    "commit": "d3f81323ee4623a7d319995c86f43aa78b4774c4"
+  },
+  "_source": "git://github.com/marknotton/on-window-resize.git",
+  "_target": "^0.0.1",
+  "_originalSource": "marknotton"
 }
