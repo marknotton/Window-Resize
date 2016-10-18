@@ -41,17 +41,22 @@
 //   console.log('test6 Inactive');
 // });
 
+// Return viewport width including scroller bar width - http://www.w3schools.com/js/js_window.asp
+function getWindowWidth() {
+  return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+}
+
+// Return viewport height including scroller bar height
+function getWindowHeight() {
+  return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+}
+
 (function( $ ) {
 
   var functions = new Array();
 
   // Set the absolute mininmum a devices can never respond down to by default
   var mininmum = 320;
-
-  // Return viewport width including scroller bar width - http://www.w3schools.com/js/js_window.asp
-  function getWindowWidth() {
-    return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  }
 
   // Call all functions from the 'functions' array if the breakpoint conditions are met
   function resize() {
