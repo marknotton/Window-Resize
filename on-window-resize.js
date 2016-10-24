@@ -42,18 +42,26 @@
 // });
 
 // Return viewport width including scroller bar width - http://www.w3schools.com/js/js_window.asp
-function getWindowWidth() {
-  return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+function getWindowWidth(bool) {
+  if(typeof bool !== 'undefined' && bool === true) {
+    return $("body").prop("clientWidth");
+  } else {
+    return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  }
 }
 
 // Return viewport height including scroller bar height
-function getWindowHeight() {
-  return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+function getWindowHeight(bool) {
+  if(typeof bool !== 'undefined' && bool === true) {
+    return $("body").prop("clientHeight");
+  } else {
+    return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+  }
 }
 
 (function( $ ) {
 
-  var functions = new Array();
+  var functions = [];
 
   // Set the absolute mininmum a devices can never respond down to by default
   var mininmum = 320;
@@ -74,7 +82,7 @@ function getWindowHeight() {
   // Incase a selctor isn't used, revert to 'window' by default
   $.onWindowResize = function(options, callbackActive, callbackInactive) {
     $(window).onWindowResize(options, callbackActive, callbackInactive);
-  }
+  };
 
   // Add the selector, function, and breakpoint rules into an array, to be called when the screen resizes
   $.fn.extend({
@@ -97,7 +105,7 @@ function getWindowHeight() {
 
         // Puts breakpoints in numerical order, so the mininmum width is the first array element
         if ($.isArray(options) && options.length > 1) {
-          options.sort(function(a, b){return a-b});
+          options.sort(function(a, b){return a-b;});
         }
 
         // Set the min and max width variables
