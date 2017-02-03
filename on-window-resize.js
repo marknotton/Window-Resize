@@ -1,46 +1,3 @@
-
-// TODO: Write proper documentation
-// Make is so when $(this) is called, the selector is the only thing returned
-// $('body').onWindowResize(500, function() { $(this).addClass('hello') })
-
-// Usage:
-// If only one breakpoint paramenter is passed (in this example: 500), the resize function will
-// call from the set number and anything above (100%)
-// $('body').onWindowResize(500, function() {
-//   console.log('test1');
-// });
-//
-// When two numbers are set (within an array), the functions will
-// only call between those two number
-// $('body').onWindowResize([500, 700], function() {
-//   console.log('test2');
-// });
-//
-// To call the function at any resolution, don't pass any breakpoints
-// $('body').onWindowResize(function() {
-//   console.log('test3');
-// });
-//
-// Remember, when you pass in a selector, it is that element which has it's width checked
-// against the breakpoints. This means the scollbar width doesn't get added to the calculations.
-// To accurately check for real breakpoints against the full viewport width, use window.
-// $(window).onWindowResize(800, function() {
-//   console.log('test4');
-// });
-//
-// ...or don't use a selector at all
-// $.onWindowResize(function() {
-//   console.log('test5');
-// });
-//
-// You can define a secondary function that gets called when the browser is above and below the given breakpoints.
-// You must have at lease one breakpoint set for the secdonary function to work
-// $('body').onWindowResize(500, function() {
-//   console.log('test6 Active');
-// }, function() {
-//   console.log('test6 Inactive');
-// });
-
 // Return viewport width including scroller bar width - http://www.w3schools.com/js/js_window.asp
 function getWindowWidth(bool) {
   if(typeof bool !== 'undefined' && bool === true) {
@@ -58,6 +15,23 @@ function getWindowHeight(bool) {
     return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
   }
 }
+
+// https://davidwalsh.name/javascript-debounce-function
+// TODO: Add debounce options
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
 
 (function( $ ) {
 
@@ -78,6 +52,7 @@ function getWindowHeight(bool) {
       }
     });
   }
+
 
   // Incase a selctor isn't used, revert to 'window' by default
   $.onWindowResize = function(options, callbackActive, callbackInactive) {
@@ -139,6 +114,6 @@ function getWindowHeight(bool) {
 
   });
 
-  $(window).on("load resize",resize);
+  $(window).on("load resize", resize);
 
 }( jQuery ));
