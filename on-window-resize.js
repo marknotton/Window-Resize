@@ -1,4 +1,4 @@
-// Return viewport width including scroller bar width - http://www.w3schools.com/js/js_window.asp
+// Return viewports width including scroller bar width - http://www.w3schools.com/js/js_window.asp
 function getWindowWidth(bool) {
   if(typeof bool !== 'undefined' && bool === true) {
     return $("body").prop("clientWidth");
