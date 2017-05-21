@@ -1,7 +1,25 @@
 # On Window Resize
-Create numerous window resize checks that are loaded into a single listener handler. 
+
+Create numerous window resize checks that are loaded into a single listener handler.
 
 Breakpoints can also be defined to restrict when functions are called.
+
+## Installation
+
+### [NPM](https://www.npmjs.com/package/on-window-resize)
+```
+npm i on-window-resize
+```
+
+### [Yarn](https://yarnpkg.com/en/package/on-window-resize)
+```
+yarn add on-window-resize
+```
+
+### Bower
+```
+bower install on-window-resize
+```
 
 # Usage:
 If only one breakpoint paramenter is passed (in the example: 500), the resize function will
@@ -28,8 +46,8 @@ $('body').onWindowResize(function() {
 ```
 
 Remember, when you pass in a selector, it is that element which has it's width checked
-against the breakpoints. This means the scollbar width doesn't get added to the calculations. 
-To accurately check for real breakpoints against the full viewport width, use window. 
+against the breakpoints. This means the scollbar width doesn't get added to the calculations.
+To accurately check for real breakpoints against the full viewport width, use window.
 ```
 $(window).onWindowResize(800, function() {
   console.log('test4');

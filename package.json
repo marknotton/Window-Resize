@@ -1,0 +1,9 @@
+{
+  "name": "on-window-resize",
+  "version": "1.0.0",
+  "description": "Create numerous window resize checks that are loaded into a single listener handler.",
+  "main": "on-window-resize.js",
+  "repository": "https://github.com/marknotton/on-window-resize",
+  "author": "Mark Notton <mark@marknotton.uk>",
+  "license": "MIT"
+}
