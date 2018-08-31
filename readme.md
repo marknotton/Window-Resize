@@ -12,7 +12,7 @@ npm i on-window-resize --save
 ```
 
 # Usage:
-If only one breakpoint paramenter is passed (in the example: 500), the resize function will
+If only one breakpoint parameter is passed (in the example: 500), the resize function will
 call from the set number and anything above (100%)
 
 ```
